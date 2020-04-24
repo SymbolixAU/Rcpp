@@ -403,7 +403,7 @@ inline std::ostream &operator<<(std::ostream & s, const Matrix<RTYPE, StoragePol
 }
 
 template<int RTYPE, template <class> class StoragePolicy >
-Matrix<RTYPE, StoragePolicy> tranpose_impl(const Matrix<RTYPE, StoragePolicy> & x) {
+Matrix<RTYPE, StoragePolicy> transpose_impl(const Matrix<RTYPE, StoragePolicy> & x) {
     typedef Matrix<RTYPE, StoragePolicy> MATRIX;
     typedef Vector<RTYPE, StoragePolicy> VECTOR;
 
@@ -433,17 +433,17 @@ Matrix<RTYPE, StoragePolicy> tranpose_impl(const Matrix<RTYPE, StoragePolicy> & 
 
 template<template <class> class StoragePolicy>
 Matrix<REALSXP, StoragePolicy> transpose(const Matrix<REALSXP, StoragePolicy> & x) {
-    return tranpose_impl<REALSXP, StoragePolicy>(x);
+    return transpose_impl<REALSXP, StoragePolicy>(x);
 }
 
 template<template <class> class StoragePolicy>
 Matrix<INTSXP, StoragePolicy> transpose(const Matrix<INTSXP, StoragePolicy> & x) {
-    return tranpose_impl<INTSXP, StoragePolicy>(x);
+    return transpose_impl<INTSXP, StoragePolicy>(x);
 }
 
 template<template <class> class StoragePolicy>
 Matrix<STRSXP, StoragePolicy> transpose(const Matrix<STRSXP, StoragePolicy> & x) {
-    return tranpose_impl<STRSXP, StoragePolicy>(x);
+    return transpose_impl<STRSXP, StoragePolicy>(x);
 }
 
 }
